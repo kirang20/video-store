@@ -9,11 +9,15 @@ public class Rental extends DomainObject {
     this.daysRented = daysRented;
   }
 
-  public int daysRented() {
-    return daysRented;
-  }
-
   public Tape tape() {
     return tape;
+  }
+
+  double charge() {
+    return tape.charge(daysRented);
+  }
+
+  int frequentRenterPointsOf() {
+    return tape.frequentRenterPointsOf(daysRented);
   }
 }

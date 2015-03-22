@@ -2,7 +2,7 @@ package com.sahaj.video_store;
 
 public class Tape extends DomainObject {
   private String serialNumber;
-  private Movie movie;
+  Movie movie;
 
   public Tape(String serialNumber, Movie movie) {
     this.serialNumber = serialNumber;
@@ -11,5 +11,13 @@ public class Tape extends DomainObject {
 
   public Movie movie() {
     return movie;
+  }
+
+  public double charge(int daysRented) {
+    return movie.charge(daysRented);
+  }
+
+  public int frequentRenterPointsOf(int daysRented) {
+    return movie.frequentRenterPointsOf(daysRented);
   }
 }
